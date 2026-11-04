@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOODLEDGER - Kas Kelas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="skull">☠</span>
+            <span>BLOOD<span class="red">LEDGER</span>
+                <small>ARSIP KAS KELAS</small>
+            </span>
+        </a>
+        <div class="status"><span></span> SISTEM AKTIF</div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <p class="eyebrow">/// CATATAN KEUANGAN KELAS</p>
+            <h1>JANGAN BIARKAN<br>
+                <span>KAS MENGHANTUI.</span>
+            </h1>
+            <p class="description">
+                Pantau iuran kelas, tandai pembayaran, dan
+                kelola uang kas dengan mudah dalam satu website.
+            </p>
+            <a href="#daftar" class="button">BUKA DAFTAR KAS ↘</a>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Terkumpul</p>
+                <h2 id="totalCollected">Rp0</h2>
+                <small>UANG MASUK</small>
+            </div>
+
+            <div class="stat-card">
+                <p>Belum Membayar</p>
+                <h2 id="unpaidCount">0 siswa</h2>
+                <small>PERLU DITAGIH</small>
+            </div>
+
+            <div class="stat-card">
+                <p>Sudah Membayar</p>
+                <h2 id="paidCount">0 siswa</h2>
+                <small>TERCATAT LUNAS</small>
+            </div>
+        </section>
+
+        <section class="panel" id="daftar">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">DATABASE / SISWA</p>
+                    <h2>Daftar Pembayaran</h2>
+                </div>
+                <div class="fee-label">
+                    IURAN: <strong id="feeLabel">Rp10.000</strong>
+                </div>
+            </div>
+
+            <form id="studentForm" class="add-form">
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Masukkan nama siswa..."
+                    maxlength="50"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="studentFee"
+                    placeholder="Nominal kas"
+                    min="1000"
+                    step="1000"
+                    value="10000"
+                    required
+                >
+
+                <button type="submit" class="button">
+                    + TAMBAH SISWA
+                </button>
+            </form>
+
+            <div class="toolbar">
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Cari nama siswa..."
+                >
+
+                <select id="statusFilter">
+                    <option value="all">Semua status</option>
+                    <option value="paid">Sudah membayar</option>
+                    <option value="unpaid">Belum membayar</option>
+                </select>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>NAMA SISWA</th>
+                            <th>NOMINAL</th>
+                            <th>STATUS</th>
+                            <th>AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable"></tbody>
+                </table>
+
+                <p id="emptyState" class="empty-state" hidden>
+                    Belum ada data siswa.
+                </p>
+            </div>
+
+            <div class="panel-footer">
+                <span>● DATA TERSIMPAN DI BROWSER</span>
+                <button id="resetButton" class="reset-button" type="button">
+                    Reset data demo
+                </button>
+            </div>
+        </section>
+
+        <div class="notice">
+            <strong>!</strong>
+            <p>
+                Website ini merupakan proyek pembelajaran.
+                Data tersimpan di browser dan belum terhubung
+                ke database online atau sistem pembayaran sungguhan.
+            </p>
+        </div>
+
+        <footer>
+            © 2026 BLOODLEDGER | PROJECT WEB MOBILE
+        </footer>
+
+    </main>
+
+</body>
+</html>
